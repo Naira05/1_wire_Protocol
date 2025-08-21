@@ -1,20 +1,21 @@
 //Module Name : Input_Sampler
 //Date: 20/8/2025
 //Author: Naira Wasseem
+
 module Input_Sampler (
-    input clk,              // System clock (12 MHz)
+    input clk,              
     input reset,            // Active-high asynchronous reset
     input bus,              // Bidirectional one-wire bus
-    output reg o_presence_pulse, // Presence pulse signal (corrected typo)
+    output reg o_presence_pulse, // Presence pulse signal 
     output reg o_bit_val,   // Sampled bit value
     output reg o_bit_ready  // Indicates a bit is ready
 );
 
-    parameter RESET_LOW = 480;       // 480 us / 83.33 ns = 5760 cycles
-    parameter PRESENCE_WAIT = 70;    // 70 us / 83.33 ns = 840 cycles
-    parameter PRESENCE_TIMEOUT = 410; // 410 us / 83.33 ns = 4920 cycles
-    parameter SAMPLE_DELAY = 70;     // 70 us / 83.33 ns = 840 cycles
-    parameter RECOVERY_TIME = 50;    // 50 us / 83.33 ns = 600 cycles
+    parameter RESET_LOW = 480;       // 480 us 
+    parameter PRESENCE_WAIT = 70;    // 70 us 
+    parameter PRESENCE_TIMEOUT = 410; // 410 us 
+    parameter SAMPLE_DELAY = 70;     // 70 us 
+    parameter RECOVERY_TIME = 50;    // 50 us 
 
     // FSM states
     parameter IDLE = 4'b0000;
